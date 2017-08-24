@@ -15,7 +15,7 @@
         </context>
     </input>
     <input pattern="* (Incident|Incidents) *">
-  <get url="https://qacentral.service-now.com//api/snc/fetch_incident" var="IncidentNo">
+  <get url="https://qacentral.service-now.com/api/snc/fetch_incident" var="IncidentNo">
   </get>
 
   <output value="$IncidentNo"/>
