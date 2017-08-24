@@ -19,7 +19,7 @@
   </get>
 
       
-<output value='get("IncidentNo",$IncidentNum)'/>
+<output value=get("IncidentNo",$IncidentNum)/>
 
 </input>
 
