@@ -32,9 +32,18 @@
                 <var name="ShortDescription" value="$Text" scope="context"/>
                 <output value="Creating Incident for following issue : $ShortDescription , My Dear"/> <!-- Using the placeholder in output -->
             </input>
+            
             </context>
   <post url="https://qacentral.service-now.com//api/snc/post_incident" var="postIncidentNum">
       <param name="Content-Type" value="application/json"/>
+      <body>
+    <![CDATA[
+      {
+        "short_description" : "$ShortDescription",
+        
+      }
+    ]]>
+  </body>
   </post>
 <var name="postResponse" value='get("result", $postIncidentNum)'/>
         <output value='$postResponse'/>
