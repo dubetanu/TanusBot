@@ -19,7 +19,7 @@
     </input>
     <input pattern="* (weather|forecast)">
   <get url="http://api.openweathermap.org/data/2.5/weather" var="Weather">
-    <param name="APPID" value="API_KEY"/>
+    <param name="APPID" value="VjoE6d2NrdG99loY"/>
     <param name="units" value="metric"/>
     <param name="lat" value="$UserLatitude"/>
     <param name="lon" value="$UserLongitude"/>
