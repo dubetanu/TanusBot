@@ -18,7 +18,7 @@
   <get url="https://qacentral.service-now.com/api/snc/fetch_incident" var="IncidentNo">
   </get>
 
-  <output value='get("result.Incident_No",$IncidentNo)'/>
+  <output value='get("Incident_No",$IncidentNo)'/>
 </input>
 
 </context>
