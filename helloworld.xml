@@ -31,7 +31,6 @@
                 <!-- Store the user’s name in the UserName variable with "user" scope to save it into database -->
                 <var name="ShortDescription" value="$Text" scope="context"/>
                 <output value="Creating Incident for following issue : $ShortDescription , My Dear"/> <!-- Using the placeholder in output -->
-            </input>
             
             
   <post url="https://qacentral.service-now.com//api/snc/post_incident" var="postIncidentNum">
@@ -48,7 +47,8 @@
 <var name="postResponse" value='get("result", $postIncidentNum)'/>
         <output value='$postResponse'/>
         
-</context>
+</input>
+            </context>
 </input>
 
 </context>
