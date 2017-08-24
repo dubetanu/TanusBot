@@ -32,7 +32,7 @@
                 <var name="ShortDescription" value="$Text" scope="user"/>
                 
                  <post url="https://qacentral.service-now.com//api/snc/post_incident" var="postIncidentNum">
-                 <param name="Content-Type" value="application/json"/>
+                 <header name="Content-Type" value="application/json"/>
                       <body>
     <![CDATA[
       {
