@@ -17,8 +17,8 @@
     <input pattern="* (Incident|Incidents) *">
   <get url="https://qacentral.service-now.com/api/snc/fetch_incident" var="IncidentNum">
   </get>
-
-        <output value='get("IncidentNo",get("result", $IncidentNum))'/>
+<var name="UserName" value="get("IncidentNo",get("result", $IncidentNum))"/>
+        <output value='$UserName'/>
 
 </input>
 
