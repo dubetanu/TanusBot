@@ -18,7 +18,7 @@
   <get url="https://qacentral.service-now.com/api/snc/fetch_incident" var="IncidentNum">
       <param name="Content-Type" value="application/json"/>
   </get>
-<var name="Response" value='get("IncidentNo", $IncidentNum)'/>
+<var name="Response" value='get("result", $IncidentNum)'/>
         <output value='$Response'/>
         
 
