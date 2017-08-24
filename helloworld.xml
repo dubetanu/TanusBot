@@ -35,7 +35,7 @@
                  <header name="Content-Type" value="application/json"/>
                       <body>
       {
-        "short_description" : "BBBB",
+        "short_description" : "BBBB"
         
       }
   </body>
