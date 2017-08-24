@@ -14,7 +14,7 @@
             </input>
         </context>
     </input>
-    <input pattern="(Incident|Incidents) *">
-        <output value="Number of incidents assigned to $UserName is 7" />
+    <input pattern="* (Incident|Incidents) *">
+        <output value="Number of P1 incidents assigned to $UserName is 3" />
     </input>
 </context>
