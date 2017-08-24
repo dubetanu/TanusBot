@@ -23,5 +23,15 @@
         
 
 </input>
+    
+    <input pattern="* (Create Incident|Create Incidents) *">
+  <post url="https://qacentral.service-now.com//api/snc/post_incident" var="postIncidentNum">
+      <param name="Content-Type" value="application/json"/>
+  </get>
+<var name="postResponse" value='get("result", $postIncidentNum)'/>
+        <output value='$postResponse'/>
+        
+
+</input>
 
 </context>
