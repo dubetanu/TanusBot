@@ -33,6 +33,14 @@
                 
                  <post url="https://qacentral.service-now.com//api/snc/post_incident" var="postIncidentNum">
                  <param name="Content-Type" value="application/json"/>
+                      <body>
+    <![CDATA[
+      {
+        "short_description" : "$ShortDescription",
+        
+      }
+    ]]>
+  </body>
                 </post>
                 <output value="Created Incident for following issue : $ShortDescription , My Dear $postIncidentNum"/>
                 <!-- Using the placeholder in output -->
