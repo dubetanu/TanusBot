@@ -29,7 +29,7 @@
         <context>
             <input pattern="$Text">
                 <!-- Store the user’s name in the UserName variable with "user" scope to save it into database -->
-                <var name="ShortDescription" value="$Text" scope="user"/>
+                <var name="ShortDescription" value="$Text" scope="context"/>
                 <output value="Creating Incident with short description $ShortDescription , My Dear"/> <!-- Using the placeholder in output -->
             </input>
             </context>
