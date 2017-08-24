@@ -34,12 +34,10 @@
                  <post url="https://qacentral.service-now.com//api/snc/post_incident" var="postIncidentNum">
                  <header name="Content-Type" value="application/json"/>
                       <body>
-    <![CDATA[
       {
         "short_description" : "BBBB",
         
       }
-    ]]>
   </body>
                 </post>
                 <output value="Created Incident for following issue : $ShortDescription , My Dear $postIncidentNum"/>
