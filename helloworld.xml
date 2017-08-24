@@ -26,12 +26,13 @@
     
     <input pattern="* (Create Incident|Create Incidents) *">
          <output value="Got U I will create an Incident For YOU . Please enter a short description"/>
-        
+        <context>
             <input pattern="$Text">
                 <!-- Store the user’s name in the UserName variable with "user" scope to save it into database -->
                 <var name="ShortDescription" value="$Text" scope="user"/>
                 <output value="Creating Incident For you , My Dear"/> <!-- Using the placeholder in output -->
             </input>
+            </context>
   <post url="https://qacentral.service-now.com//api/snc/post_incident" var="postIncidentNum">
       <param name="Content-Type" value="application/json"/>
   </post>
