@@ -17,10 +17,4 @@
     <input pattern="* (Incident|Incidents) *">
         <output value="Number of P1 incidents assigned to $UserName is 3" />
     </input>
-    <input pattern="* (weather|forecast)">
-  <get url="https://qacentral.service-now.com/api/now/table/incident?sysparm_query=priority%3D1&sysparm_fields=number&sysparm_limit=1&sysparm_view=" var="Weather">
-  </get>
-
-  <output value='get("temp", get("main", $Weather))'/>
-</input>
 </context>
