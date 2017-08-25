@@ -59,7 +59,7 @@
 <var name="Response" value='get("number",get("result", $LeadNum))'/>
 
      
-        <output value='$Response'/>
+        <output value='$LeadNum'/>
         
 
 
