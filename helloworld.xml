@@ -53,10 +53,7 @@
      <input pattern="* (Lead|Leads) *">
          <sample>
       <item>Create Lead</item>
-      <item>Leads converted in last 7 days</item>
-      <item>Last 4 Leads Created by me</item>
-    </sample>
-    <context>
+              <context>
          
   <get url="https://qacentral.service-now.com/api/snc/leads_converted" var="LeadNum">
       <param name="Content-Type" value="application/json"/>
@@ -64,5 +61,9 @@
 <var name="Response" value='get("result",$LeadNum)'/>
 <output value="$Response"/>
     </context>
+      <item>Leads converted in last 7 days</item>
+      <item>Last 4 Leads Created by me</item>
+    </sample>
+   
 </input>
 </context>
