@@ -50,9 +50,9 @@
         
 
 </input>
-    
+     <input pattern="* (Lead|Leads) *">
     <context>
-          <input pattern="* (Lead|Leads) *">
+         
   <get url="https://qacentral.service-now.com/api/snc/leads_converted" var="LeadNum">
       <param name="Content-Type" value="application/json"/>
   </get>
@@ -60,7 +60,7 @@
         <output value='$Response'/>
         
 
-</input>
-    </context>
 
+    </context>
+</input>
 </context>
