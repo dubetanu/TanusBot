@@ -63,7 +63,7 @@
   </get>
 <var name="Response" value='get("result",$LeadNum)'/>
               
-<output value="$userInput"/>
+<output value="$Response"/>
             
     </context>
    
