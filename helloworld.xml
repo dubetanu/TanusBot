@@ -57,10 +57,11 @@
       <param name="Content-Type" value="application/json"/>
   </get>
 <var name="Response" value='get("result",get("result", $LeadNum))'/>
+ <var name="Response1" value='get("number", $Response)'/>
 
         
      
-        <output value='$Response.number'/>
+        <output value='$Response1'/>
         
 
 
