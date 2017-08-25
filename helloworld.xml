@@ -56,8 +56,8 @@
   <get url="https://qacentral.service-now.com/api/snc/leads_converted" var="LeadNum">
       <param name="Content-Type" value="application/json"/>
   </get>
-
-<output value="$LeadNum"/>
+<var name="Response" value='get("result",$LeadNum)'/>
+<output value="$Response"/>
      
        
         
