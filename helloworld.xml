@@ -61,14 +61,15 @@
          </input>
            
            <input pattern="$Text">
-               <context>
+              
                 <!-- Store the user’s name in the UserName variable with "user" scope to save it into database -->
                 <var name="optionSelect" value="$Text" scope="user"/>
+                <context if="full($optionSelect)" modal="true">>
   <get url="https://qacentral.service-now.com/api/snc/leads_converted" var="LeadNum">
       <param name="Content-Type" value="application/json"/>
   </get>
 <var name="Response" value='get("result",$LeadNum)'/>
-<output value="$Response"  if="full($optionSelect)/>
+<output value="$Response"/>
             
     </context>
    
