@@ -62,7 +62,13 @@
       <param name="Content-Type" value="application/json"/>
   </get>
 <var name="Response" value='get("result",$LeadNum)'/>
-<output value="$Response"/>
+   <output>            
+  <![CDATA[
+      <h3>Here is your name</h3>
+      <a href=$Response>$UserName</a>
+    ]]>              
+               
+               </output>
             
     </context>
    
