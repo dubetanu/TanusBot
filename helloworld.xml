@@ -59,8 +59,9 @@
       <item>Last 4 Leads Created by me</item>
     </sample>
          </input>
-           <context>
+           
            <input pattern="$Text">
+               <context>
                 <!-- Store the user’s name in the UserName variable with "user" scope to save it into database -->
                 <var name="optionSelect" value="$Text" scope="user"/>
   <get url="https://qacentral.service-now.com/api/snc/leads_converted" var="LeadNum">
