@@ -55,7 +55,7 @@
         <output value="Hi! How can I help you in Leads area?"/>
 
   <context>
-    <input pattern="* $Color"/>
+    <input pattern="* $Lead"/>
     <sample>
       <item>Create Lead</item>
       <item>Latest Converted Leads</item>
