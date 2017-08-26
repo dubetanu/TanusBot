@@ -50,25 +50,21 @@
         
 
 </input>
-   <input pattern="* (Lead|Leads) *">
-       
-        <output value="Hi! How can I help you in Leads area?"/>
-
-  <context>
-    <input pattern="* $Lead"/>
-    <sample>
+     <input pattern="* (Lead|Leads) *">
+         <sample>
       <item>Create Lead</item>
-      <item>Latest Converted Leads</item>
-      <item>My 4 latest Lead</item>
+      <item>Leads converted in last 7 days</item>
+      <item>Last 4 Leads Created by me</item>
     </sample>
-      
-      <get url="https://qacentral.service-now.com/api/snc/leads_converted" var="LeadNum">
-               <param name="Content-Type" value="application/json" />
-            </get>
-            <var name="Response" value='get("result",$LeadNum)' />
-            <output value="$Response"/>
-         
-      </input>
- </context>     
-   </input>
+           <context>
+          
+  <get url="https://qacentral.service-now.com/api/snc/leads_converted" var="LeadNum">
+      <param name="Content-Type" value="application/json"/>
+  </get>
+<var name="Response" value='get("result",$LeadNum)'/>
+<output value="$Response"/>
+            
+    </context>
+   
+</input>
 </context>
