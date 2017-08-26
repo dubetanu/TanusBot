@@ -50,8 +50,9 @@
         
 
 </input>
-     <context>
+    
      <input pattern="* (Lead|Leads) *">
+          <context>
          <sample>
       <item>Create Lead</item>
       <item>Leads converted in last 7 days</item>
