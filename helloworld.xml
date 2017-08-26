@@ -64,7 +64,7 @@
 <var name="Response" value='get("result",$LeadNum)'/>
    <output>            
   <![CDATA[
-      <a href=$Response>"Link to lead"</a>
+      <a href=$Response>Link to lead</a>
     ]]>              
                
                </output>
