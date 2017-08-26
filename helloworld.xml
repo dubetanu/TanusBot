@@ -52,14 +52,14 @@
 </input>
      
      <input pattern="* (Lead|Leads) *">
-         <context>
+        
          <sample>
       <item>Create Lead</item>
       <item>Leads converted in last 7 days</item>
       <item>Last 4 Leads Created by me</item>
     </sample>
          </input>
-          
+           <context>
            <input pattern="$Text">
                 <!-- Store the user’s name in the UserName variable with "user" scope to save it into database -->
                 <var name="optionSelect" value="$Text" scope="user"/>
