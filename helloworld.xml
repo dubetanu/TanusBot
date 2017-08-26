@@ -64,6 +64,7 @@
 <var name="Response" value='get("result",$LeadNum)'/>
    <output>            
   <![CDATA[
+  <h3>Here is your lead</h3>
       <a href=$Response>Link to lead</a>
     ]]>              
                
