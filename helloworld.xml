@@ -50,13 +50,14 @@
         
 
 </input>
+     <context>
      <input pattern="* (Lead|Leads) *">
          <sample>
       <item>Create Lead</item>
       <item>Leads converted in last 7 days</item>
       <item>Last 4 Leads Created by me</item>
     </sample>
-           <context>
+          
            <input pattern="$Text">
                 <!-- Store the user’s name in the UserName variable with "user" scope to save it into database -->
                 <var name="ShortDescription" value="$Text" scope="user"/>
@@ -64,7 +65,7 @@
       <param name="Content-Type" value="application/json"/>
   </get>
 <var name="Response" value='get("result",$LeadNum)'/>
-              <output value="Hello $Response!"/>
+              <output value="Hello $ShortDescription!"/>
 
              </input>
     </context>
