@@ -65,7 +65,7 @@
   </get>
 <var name="Response" value='get("result",$LeadNum)'/>
               <output value="Hello $Response!" if="eq($ShortDescription,'Leads converted in last 7 days')"/>
-<output value="$Response"/>
+
              </input>
     </context>
    
