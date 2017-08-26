@@ -66,7 +66,8 @@
             </get>
             <var name="Response" value='get("result",$LeadNum)' />
             <output value="$Response" if="full($optionSelect)"/>
-         </context>
+         
       </input>
+           </context>
    </input>
 </context>
