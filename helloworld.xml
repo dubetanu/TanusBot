@@ -68,7 +68,7 @@
             <var name="Response" value='get("result",$LeadNum)' />
             <output value="$Response"/>
          
-      
+      </input>
  </context>     
    </input>
 </context>
