@@ -61,7 +61,7 @@
       <item>Latest Converted Leads</item>
       <item>My 4 latest Lead</item>
     </sample>
-
+ </context>
        
             <get url="https://qacentral.service-now.com/api/snc/leads_converted" var="LeadNum">
                <param name="Content-Type" value="application/json" />
@@ -69,7 +69,7 @@
             <var name="Response" value='get("result",$LeadNum)' />
             <output value="$Response" if="full($Color)"/>
          
-      </input>
-           </context>
+      
+          
    </input>
 </context>
