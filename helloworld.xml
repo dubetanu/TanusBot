@@ -1,46 +1,55 @@
 <context>
-   <input pattern="(hi|hello) *">
-      <!-- Greet the user if we know his/her name -->
-      <output value="Hello $UserName!" if="full($UserName)" />
-      <!-- Or activate an inner context to ask the user about his/her name -->
-      <context if="empty($UserName)" modal="true">
-         <!-- We use a modal context, so our bot will recognize any text as the user’s name -->
-         <output value="Hi! What is your name?" />
-         <input pattern="$Text">
-            <!-- Store the user’s name in the UserName variable with "user" scope to save it into database -->
-            <var name="UserName" value="$Text" scope="user" />
-            <output value="Nice to meet you, $UserName! How can I help you?" />
-            <!-- Using the placeholder in output -->
-         </input>
-      </context>
-   </input>
-   <input pattern="* (Incident|Incidents) *">
-      <get url="https://qacentral.service-now.com/api/snc/fetch_incident" var="IncidentNum">
-         <param name="Content-Type" value="application/json" />
-      </get>
-      <var name="Response" value="get(&amp;quot;IncidentNo&amp;quot;,get(&amp;quot;result&amp;quot;, $IncidentNum))" />
-      <output value="$Response" />
-   </input>
-   <input pattern="* (Create Incident|Create Incidents) *">
-      <output value="Got U I will create an Incident For YOU . Please enter a short description" />
-      <context>
-         <input pattern="$Text">
-            <!-- Store the user’s name in the UserName variable with "user" scope to save it into database -->
-            <var name="ShortDescription" value="$Text" scope="user" />
-            <post url="https://qacentral.service-now.com//api/snc/post_incident" var="postIncidentNum">
-               <header name="Content-Type" value="application/json" />
-               <body>{
+    <input pattern="(hi|hello) *">
+        <!-- Greet the user if we know his/her name -->
+        <output value="Hello $UserName!" if="full($UserName)"/>
+
+        <!-- Or activate an inner context to ask the user about his/her name -->
+        <context if="empty($UserName)" modal="true"> <!-- We use a modal context, so our bot will recognize any text as the user’s name -->
+            <output value="Hi! What is your name?"/>
+
+            <input pattern="$Text">
+                <!-- Store the user’s name in the UserName variable with "user" scope to save it into database -->
+                <var name="UserName" value="$Text" scope="user"/>
+                <output value="Nice to meet you, $UserName! How can I help you?"/> <!-- Using the placeholder in output -->
+            </input>
+        </context>
+    </input>
+    <input pattern="* (Incident|Incidents) *">
+  <get url="https://qacentral.service-now.com/api/snc/fetch_incident" var="IncidentNum">
+      <param name="Content-Type" value="application/json"/>
+  </get>
+<var name="Response" value='get("IncidentNo",get("result", $IncidentNum))'/>
+        <output value='$Response'/>
+        
+
+</input>
+    
+    <input pattern="* (Create Incident|Create Incidents) *">
+         <output value="Got U I will create an Incident For YOU . Please enter a short description"/>
+        <context>
+            <input pattern="$Text">
+                <!-- Store the user’s name in the UserName variable with "user" scope to save it into database -->
+                <var name="ShortDescription" value="$Text" scope="user"/>
+                
+                 <post url="https://qacentral.service-now.com//api/snc/post_incident" var="postIncidentNum">
+                 <header name="Content-Type" value="application/json"/>
+                      <body>
+      {
         "short_description" : "$ShortDescription"
         
-      }</body>
-            </post>
-            <output value="Created Incident for following issue : $ShortDescription , My Dear $postIncidentNum" />
-            <!-- Using the placeholder in output -->
-         </input>
-      </context>
-      <var name="postResponse" value="get(&amp;quot;result&amp;quot;, $postIncidentNum)" />
-      <output value="$postResponse" />
-   </input>
+      }
+  </body>
+                </post>
+                <output value="Created Incident for following issue : $ShortDescription , My Dear $postIncidentNum"/>
+                <!-- Using the placeholder in output -->
+            </input>
+            </context>
+ 
+<var name="postResponse" value='get("result", $postIncidentNum)'/>
+        <output value='$postResponse'/>
+        
+
+</input>
    <input pattern="* (Lead|Leads) *">
       <sample>
          <item>Create Lead</item>
