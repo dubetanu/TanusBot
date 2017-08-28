@@ -51,19 +51,17 @@
 
 </input>
      <input pattern="* (Lead|Leads) *">
-         <sample>
-      <item>Create Lead</item>
-      <item>Leads converted in last 7 days</item>
-      <item>Last 4 Leads Created by me</item>
-    </sample>
+         <output value="Got U I will get recently converted leads For YOU . Please enter you want leads converted in last how many days?"/>
            <context>
-          
+           <input pattern="$Text">
+                 <var name="days" value="$Text" scope="user"/>
   <get url="https://qacentral.service-now.com/api/snc/leads_converted" var="LeadNum">
       <param name="Content-Type" value="application/json"/>
+        <param name="Day" value="$days"/>
   </get>
 <var name="Response" value='get("result",$LeadNum)'/>
 <output value="$Response"/>
-            
+        </input>    
     </context>
    
 </input>
