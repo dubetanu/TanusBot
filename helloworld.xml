@@ -50,8 +50,8 @@
         
 
 </input>
-     <input pattern="* (Lead|Leads) *">
-         <output value="Got U I will get recently converted leads For YOU . Please enter you want leads converted in last how many days?"/>
+     <input pattern="* (Lead Converted|Leads Converted) *">
+         <output value="Cool.. I will get recently converted leads For YOU . Please enter you want leads converted in last how many days?"/>
            <context>
            <input pattern="$Text">
                  <var name="days" value="$Text" scope="user"/>
@@ -64,6 +64,5 @@
 <output value="$Response"/>
         </input>    
     </context>
-   
 </input>
 </context>
